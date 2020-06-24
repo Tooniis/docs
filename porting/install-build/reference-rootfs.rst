@@ -2,7 +2,7 @@
 Halium reference rootfs
 =======================
 
-Once you have built the system.img from the android tree, you can download and install the rootfs using the ``halium-install`` script from the `halium-scripts repository <https://github.com/Halium/halium-scripts/>`_.
+Once you have built the system.img from the android tree, you can download and install the rootfs using the ``halium-install`` script.
 
 
 Install hybris-boot.img
@@ -15,6 +15,8 @@ Next, simply execute the following command::
     fastboot flash boot [path/to/]hybris-boot.img
 
 If you're in BUILDDIR, ``hybris-boot.img`` will be located at ``out/target/product/[codename]/hybris-boot.img``.
+
+This will flash `hybris-boot.img` on your device's `/boot` directory.
 
 
 Install hybris-boot.img on Samsung devices
@@ -55,6 +57,8 @@ Install rootfs and system.img
 * Bring the device into recovery mode and run::
 
     ./halium-install -p halium <path to rootfs tarball> <path to android system.img>
+    
+This will install the rootfs and system images in `/data`.
 
 If you have trouble getting this to work, use the ``-v`` option to get verbose output.
 
